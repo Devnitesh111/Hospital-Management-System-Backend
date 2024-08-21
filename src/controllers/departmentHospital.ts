@@ -3,25 +3,25 @@ import Department from '../database/models/Department'
 class DepartmentController{
     departmentData=[
         {
-departmentData : "Ortho"
+departmentName : "Ortho"
     },
     {
-   departmentData : "General Physican"
+   departmentName : "General Physican"
     },
      {
-     departmentData : "Gyastro"
+     departmentName : "Gyastro"
      },
      {
-    departmentData : "Child Care"
+    departmentName : "Child Care"
    },
  {
-   departmentData : "Neuro"
+   departmentName : "Neuro"
      },
     {
-  departmentData : "Ortho"
+  departmentName : "Ortho"
     },
     {
-        departmentData : "Emergency"
+        departmentName : "Emergency"
        },
     ]
     async seedDepartment():Promise<void>{
@@ -81,7 +81,7 @@ where:{
         })
       }
     }
-    async updateCategory(req:Request,res:Response):Promise<void>{
+    async updateDepartment(req:Request,res:Response):Promise<void>{
       const {id} = req.params
       const {departmentName} = req.body
       await Department.update({departmentName},{
